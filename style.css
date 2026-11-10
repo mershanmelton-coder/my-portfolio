@@ -1,0 +1,346 @@
+/* Mershan Melton portfolio — restored black & purple theme */
+:root {
+  --bg: #050507;
+  --panel: #0b0711;
+  --sky-blue: #a855f7;
+  --sky-blue-bright: #c084fc;
+  --sky-blue-deep: #7928ca;
+  --text: #ffffff;
+  --muted: #c5c5d0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 12px 8%;
+  background: rgba(8, 3, 15, .96);
+  border-bottom: 1px solid #292039;
+  backdrop-filter: blur(12px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 62px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  width: 100px;
+  height: 80px;
+  text-decoration: none;
+  background: transparent;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+nav ul a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+nav ul a:hover {
+  color: var(--purple-bright);
+}
+
+#home {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  align-items: center;
+  gap: 50px;
+  padding: 80px 7%;
+  background-color: #050507;
+  background-image: url("home-bg.png");
+  background-position: center;
+  background-size: 120% auto;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#home>* {
+  position: relative;
+  z-index: 1;
+}
+
+.home-content {
+  width: 100%;
+  max-width: 650px;
+}
+
+.intro {
+  color: var(--purple-bright);
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.home-content h1 {
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.15;
+  margin: 15px 0 25px;
+}
+
+.home-content h3 {
+  color: var(--purple-bright);
+  font-size: 25px;
+  margin-bottom: 22px;
+  min-height: 38px;
+}
+
+.home-content p {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #9333ea;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: .25s ease;
+  margin-bottom: 20px;
+}
+
+.btn:hover {
+  background: var(--purple);
+  box-shadow: 0 0 20px #9333ea;
+  transform: translateY(-3px);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  background:  #003b99;
+  border: 1px solid #008cff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: .25s ease;
+}
+
+..social-links a:hover {
+  background: #007bff;
+  box-shadow: 0 0 20px #008cff;
+  transform: translateY(-3px);
+}
+.home-image {
+  width: 320px;
+  height: 320px;
+  justify-self: end;
+  border-radius: 50%;
+  padding: 6px;
+ background: linear-gradient(135deg, #00aaff, #0033cc);
+box-shadow: 0 0 30px #0066ff;
+}
+
+.home-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+section:not(#home) {
+  padding: 80px 12%;
+  text-align: center;
+  background: #08080f;
+  border-bottom: 1px solid #35105a;
+}
+
+section h2 {
+  color: var(--purple-bright);
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+section:not(#home) p {
+  color: var(--muted);
+  max-width: 750px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px 5%;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 18px;
+    padding-bottom: 8px;
+  }
+
+  #home {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    gap: 38px;
+    padding: 55px 8%;
+  }
+
+  .home-content h3 {
+    font-size: 20px;
+  }
+
+  .home-image {
+    width: 240px;
+    height: 240px;
+    justify-self: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  section:not(#home) {
+    padding: 60px 8%;
+  }
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+
+/* Enhanced electric-blue geometric outlines */
+.home-image {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Rotating diamond outline */
+.home-image::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 112%;
+    height: 112%;
+    left: -6%;
+    top: -6%;
+
+    border: 2.5px solid rgba(0, 145, 255, 0.8);
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 12px rgba(0, 145, 255, 0.5),
+        0 0 28px rgba(0, 100, 255, 0.25);
+
+    transform: rotate(45deg);
+    transition: all 700ms ease;
+    pointer-events: none;
+}
+
+/* Outer circular orbit */
+.home-image::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 125%;
+    height: 125%;
+    left: -12.5%;
+    top: -12.5%;
+
+    border: 2px solid rgba(0, 190, 255, 0.55);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px rgba(0, 180, 255, 0.4),
+        0 0 30px rgba(0, 100, 255, 0.2);
+
+    transition: all 900ms ease;
+    pointer-events: none;
+}
+
+/* Mouse hover animation */
+.home-image:hover::before {
+    transform: rotate(135deg) scale(1.04);
+    border-color: #00c8ff;
+    box-shadow:
+        0 0 18px #008cff,
+        0 0 35px rgba(0, 145, 255, 0.65);
+}
+
+.home-image:hover::after {
+    transform: rotate(45deg) scale(1.06);
+    border-color: #00c8ff;
+    box-shadow:
+        0 0 20px rgba(0, 190, 255, 0.7),
+        0 0 40px rgba(0, 100, 255, 0.35);
+}
+
+/* Keep profile photo above the outlines */
+.home-image img {
+    position: relative;
+    z-index: 1;
+}
+.btn {
+    background: #003b99;
+    border: 1px solid #008cff;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.3);
+}
+
+.btn:hover {
+    background: #007bff;
+    box-shadow: 0 0 20px #008cff;
+}
